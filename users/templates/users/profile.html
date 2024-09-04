@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="image d-flex flex-column justify-content-center align-items-center">
+<button class="btn btn-primary">
+    <img src="https://png.pngtree.com/png-vector/20240501/ourlarge/pngtree-code-and-coffee-the-mind-of-a-determined-professional-png-image_12350632.png" height="100" width="100" />
+</button>
+    <span class="name mt-3">{{user.first_name}} {{user.last_name}}</span>
+    <span class="idd">@{{user.username}}</span>
+    <span class="idd">{{user.email}}</span>
+    <div class="d-flex mt-2"><a class="btn btn-dark" href="{% url 'users:profile-edit'%}">Edit profile</a>    </div>
+    <div class="px-2 rounded mt-4 date"> <span class="join">Joined {{user.date_joined | date:"M d, Y"}}</span></div>
+
+</div>
+
+
+
+<!--<a href="{% url 'users:profile-edit'%}">Edit profile</a>-->
+<!--<p>Username : {{user.username}}</p>-->
+<!--<p>First name: {{user.first_name}}</p>-->
+<!--<p>Last name: {{user.last_name}}</p>-->
+<!--<p>Email: {{user.email}}</p>-->
+
+{% endblock content %}
